@@ -1,0 +1,19 @@
+body {
+    background-color:black;
+    color:#f5f5f5;
+}
+
+.content-cover {
+
+    background-color:coral;
+}
+
+.content-cover h2 {
+
+    text-align:center;
+}
+
+#chats h4 {
+
+    color:coral;
+}
