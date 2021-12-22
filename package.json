@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "npx nodemon --exec npx babel-node ./server.js"
+    "start": "node server.js"
   },
   "author": "Agnes",
   "license": "ISC",
