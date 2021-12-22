@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node /server.js"
+    "start": "node server.js"
   },
   "author": "Agnes",
   "license": "ISC",
@@ -19,5 +19,8 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1"
+  },
+  "engines": {
+    "node": "13.0"
   }
 }
