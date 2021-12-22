@@ -2,17 +2,19 @@ import express from 'express'
 import { createServer } from 'http';
 import { Server } from 'socket.io';
 import mongoose from 'mongoose'
+import dotenv from 'dotenv'
 
 const app = express()
 const server = createServer(app); 
 const socketio = new Server(server);
+dotenv.config()
 
 app.use(express.static(__dirname))
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
-const dbUrl = 'mongodb+srv://Agnes:agyyemi4life@cluster0.d9y2r.mongodb.net/Chat?retryWrites=true&w=majority';
+const dbUrl = process.env.CONNECTION_KEY
 
 mongoose.connect(dbUrl, {useNewUrlParser:true, useUnifiedTopology:true})
 
