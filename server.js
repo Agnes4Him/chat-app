@@ -5,6 +5,7 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 
 const app = express()
+const port = Process.env.PORT || 8000 
 const server = createServer(app); 
 const socketio = new Server(server);
 dotenv.config()
@@ -20,7 +21,7 @@ mongoose.connect(dbUrl, {useNewUrlParser:true, useUnifiedTopology:true})
 
 .then((result) => {
 
-  server.listen(8000, () => {
+  server.listen(port, () => {
   
     console.log("Listening on port", server.address().port)
   
