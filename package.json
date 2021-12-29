@@ -4,7 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "heroku-prebuild": "npm install -f",
+    "heroku-postbuild": "npm run prod"
+
   },
   "author": "Agnes",
   "license": "ISC",
@@ -13,6 +16,7 @@
     "express": "^4.17.1",
     "mongoose": "^6.0.14",
     "nodemon": "^2.0.15",
+    "serve": "^13.0.2",
     "socket.io": "^4.4.0"
   },
   "devDependencies": {
