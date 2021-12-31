@@ -4,10 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "serve -s build",
-    "heroku-prebuild": "npm install -f",
-    "heroku-postbuild": "npm run build"
-
+    "start": "node server.js"
   },
   "author": "Agnes",
   "license": "ISC",
