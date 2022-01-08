@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "npx nodemon --exec npx babel-node ./server.js"
   },
   "author": "Agnes",
   "license": "ISC",
@@ -13,16 +13,12 @@
     "express": "^4.17.1",
     "mongoose": "^6.0.14",
     "nodemon": "^2.0.15",
-    "serve": "^13.0.2",
     "socket.io": "^4.4.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-loader": "^8.2.3",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1"
-  },
-  "engines": {
-    "node": "13.0",
-    "npm": "8.1.0"
   }
 }

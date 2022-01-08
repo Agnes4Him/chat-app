@@ -1,19 +1,83 @@
 body {
     background-color:black;
-    color:#f5f5f5;
+    padding:0;
+    margin:0;
+    font-size:18px;
+}
+
+.container {
+
+    margin:auto;
+    width:90vw;
+}
+
+.container h2 {
+
+    color:aquamarine;
+    font-size:2rem;
 }
 
 .content-cover {
 
+    display:flex;
+    justify-content:space-between;
+    height:70vh;
+}
+
+.content {
+
     background-color:coral;
+    width:40%;
 }
 
-.content-cover h2 {
+.field {
 
-    text-align:center;
+    margin-top:1.5rem;
+    margin-left:2rem;
 }
 
-#chats h4 {
+#name {
 
-    color:coral;
+    width:75%;
+    height:7vh;
 }
+
+#message {
+
+    width:75%;
+    height:25vh;
+}
+
+#send { 
+    
+    padding:0.5rem 1.5rem;
+    border:none;
+    font-size:1.25rem;
+    background-color:aqua;
+    color:#f5f5f5;
+}
+
+#send:hover {
+
+    border:1px solid aqua;
+    color:aqua;
+    background-color:transparent;
+}
+
+#chats {
+
+    width:35%;
+    color:aquamarine;
+    margin-bottom:0.25rem;
+    overflow-y:auto;
+    overflow-wrap:break-word;
+    height:100%;
+}
+
+#chats div {
+
+    background-color:#333;
+    padding-left:0.25rem;
+}
+
+

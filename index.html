@@ -3,34 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <script src="/socket.io/socket.io.js"></script>
     <title>Chat App</title>
   </head>
   <body>
     <br><br>
-    <div class="container d-flex justify-content-center flex-column align-items-center">
-    <div class="card content-cover" style="width: 26rem;">
+    <div class="container">
       <h2>Send Message</h2>
-      <div class="card-body content">
+    <div class="content-cover">
+      <div class="content">
         <div>
-          <input type="text" class="form-control" placeholder="Name" id="name">
+          <input type="text" class="field" placeholder="Name" id="name">
         </div>
         <br>
         <div>
-          <textarea class="form-control" rows="3" id="message" placeholder="Message"></textarea>
+          <textarea class="field" id="message" placeholder="Message"></textarea>
+        </div>
+        <br>
+        <button class="field" id="send">Send</button>
        </div>
-       <br>
-        <button class="btn btn-success" id="send">Send</button>
-       </div>
+       <div id="chats"></div>
     </div>
-    <br><br>
-    <div id="chats"></div>
    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script type="text/javascript">
 
       var socket = io();
@@ -43,7 +39,7 @@
       })
 
       const addMessages = (messages) => {
-        $('#chats').append(`<h4>${messages.name}</h4><p>${messages.message}</p>`);
+        $('#chats').append(`<div><h4>${messages.name}</h4><p>${messages.message}</p></div>`);
 
       }
 
@@ -62,7 +58,13 @@
 
         $.post('http://localhost:8000/messages', message)
       }
-    
+
+      // Autoscroll chats div 
+
+      //$('html, body').animate({ scrollTop: $(document).height() - $(window).height() }, 1000, function() {
+      //$(this).animate({ scrollTop: 0 }, 1000);
+      //});
+      
     </script>
   </body>
 </html>
