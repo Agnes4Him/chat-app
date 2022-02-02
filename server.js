@@ -10,7 +10,7 @@ const server = createServer(app);  // or import http from 'http', then http.crea
 const socketio = new Server(server);
 dotenv.config()
 
-app.use(express.static(__dirname))
+app.use(express.static(__dirname, 'src'))
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
