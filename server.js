@@ -1,16 +1,16 @@
-import express from 'express'
-import { createServer } from 'http'
-import { Server } from 'socket.io'
-import mongoose from 'mongoose'
-import dotenv from 'dotenv'
+const express = require('express')
+const http = require('http')
+const mongoose = require('mongoose')
+const dotenv = require('dotenv')
+const { Server } = require('socket.io')
 
 const app = express();
 const port = process.env.PORT || 8000; 
-const server = createServer(app);  // or import http from 'http', then http.creatServer(app)
+const server = http.createServer(app);
 const socketio = new Server(server);
 dotenv.config()
 
-app.use(express.static(__dirname, 'src'))
+app.use(express.static(__dirname))
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
