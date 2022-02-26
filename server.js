@@ -13,7 +13,7 @@ dotenv.config()
 
 //app.use(express.static(__dirname))
 if (process.env.Node_Env === 'production') {
-  app.use(express.static(path.join(__dirname, 'index')))
+  app.use(express.static(path.join(__dirname, '/index')))
 }
 
 app.use(express.json())
