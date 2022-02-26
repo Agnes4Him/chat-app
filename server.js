@@ -38,9 +38,9 @@ mongoose.connect(dbUrl, {useNewUrlParser:true, useUnifiedTopology:true})
   console.log(err);
 })
 
-app.get('/', (req, res, next) => {
+app.get('/', (req, res) => {
 
-  res.render('index.html')
+  res.sendFile(path.join(__dirname + '/index.html'));
 
 });
 
