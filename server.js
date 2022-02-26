@@ -10,7 +10,10 @@ const server = http.createServer(app);
 const socketio = new Server(server);
 dotenv.config()
 
-app.use(express.static(__dirname))
+//app.use(express.static(__dirname))
+if (process.env.Node_Env === 'production') {
+  app.use(express.static(__dirname))
+}
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
