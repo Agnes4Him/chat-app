@@ -40,13 +40,7 @@ mongoose.connect(dbUrl, {useNewUrlParser:true, useUnifiedTopology:true})
 
 app.get('/', (req, res, next) => {
 
-  res.status(200).json({
-      status: 'success',
-      data: {
-          name: 'Chat-alive',
-          version: '0.1.0'
-      }
-  });
+  res.render('index.html')
 
 });
 
