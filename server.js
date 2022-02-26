@@ -3,6 +3,7 @@ const http = require('http')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const { Server } = require('socket.io')
+const path = require('path')
 
 const app = express();
 const port = process.env.PORT || 8000; 
@@ -12,7 +13,7 @@ dotenv.config()
 
 //app.use(express.static(__dirname))
 if (process.env.Node_Env === 'production') {
-  app.use(express.static(__dirname))
+  app.use(express.static(path.join(__dirname, 'index')))
 }
 
 app.use(express.json())
