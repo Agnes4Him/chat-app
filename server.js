@@ -12,9 +12,9 @@ const socketio = new Server(server);
 dotenv.config()
 
 //app.use(express.static(__dirname))
-if (process.env.Node_Env === 'production') {
-  app.use(express.static(path.join(__dirname, '/index')))
-}
+//if (process.env.Node_Env === 'production') {
+ // app.use(express.static(path.join(__dirname, '/index')))
+//}
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
@@ -37,6 +37,18 @@ mongoose.connect(dbUrl, {useNewUrlParser:true, useUnifiedTopology:true})
 
   console.log(err);
 })
+
+app.get('/', (req, res, next) => {
+
+  res.status(200).json({
+      status: 'success',
+      data: {
+          name: 'Chat-alive',
+          version: '0.1.0'
+      }
+  });
+
+});
 
 
 const Message = mongoose.model('Message', {
