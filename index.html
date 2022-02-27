@@ -41,6 +41,7 @@
       const addMessages = (messages) => {
         $('#chats').append(`<div><h4>${messages.name}</h4><p>${messages.message}</p></div>`);
         //$('#chats').scrollTop();
+        $("#chats").scrollTop = $("#chats").scrollHeight;
       }
 
       const getMessages = () => {
@@ -50,6 +51,7 @@
             addMessages(element)
           }, this) 
         })
+       
       }
 
       socket.on('messages', addMessages);
