@@ -34,8 +34,6 @@
         $('#send').click(() => {
           var eachMessage = {name:$('#name').val(), message:$('#message').val()}
           postMessages(eachMessage) 
-          $('#chats').animate({scrollTop:$(#chats).height()}, 'slow');
-          return false;
         })
         getMessages()
       })
