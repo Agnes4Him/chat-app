@@ -11,13 +11,13 @@ const server = http.createServer(app);
 const socketio = new Server(server);
 dotenv.config()
 
-//app.use(express.static(__dirname))
+app.use(express.static(__dirname))
 
-if (process.env.Node_Env === 'production') {
+//if (process.env.Node_Env === 'production') {
 
-  app.use(express.static(path.join(__dirname + '/index.html')))
+  //app.use(express.static(path.join(__dirname + '/index.html')))
   
-}
+//}
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
@@ -41,11 +41,11 @@ mongoose.connect(dbUrl, {useNewUrlParser:true, useUnifiedTopology:true})
   console.log(err);
 })
 
-//app.get('/', (req, res) => {
+app.get('/', (req, res) => {
 
-  //res.sendFile(path.join(__dirname + '/index.html'));
+  res.sendFile(path.join(__dirname + '/index.html'));
 
-//});
+});
 
 
 const Message = mongoose.model('Message', {
