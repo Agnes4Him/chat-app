@@ -34,6 +34,8 @@
         $('#send').click(() => {
           var eachMessage = {name:$('#name').val(), message:$('#message').val()}
           postMessages(eachMessage) 
+          $('#chats').animate({scrollTop:$(#chats).height()}, 'slow');
+          return false;
         })
         getMessages()
       })
@@ -41,8 +43,6 @@
       const addMessages = (messages) => {
         $('#chats').append(`<div><h4>${messages.name}</h4><p>${messages.message}</p></div>`);
         //$('#chats').scrollTop();
-        $('#chats').animate({scrollTop:$(#chats).height()}, 'slow');
-
       }
 
       const getMessages = () => {
